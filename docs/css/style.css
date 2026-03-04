@@ -1,0 +1,336 @@
+/* ========== Reset & Base ========== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #6C3CE1;
+  --primary-dark: #4A1FB8;
+  --accent: #00D4FF;
+  --bg-dark: #0F0A2A;
+  --bg-card: #1A1140;
+  --text: #E8E4F0;
+  --text-muted: #9B8FC4;
+  --border: rgba(108, 60, 225, 0.3);
+  --gradient: linear-gradient(135deg, #6C3CE1, #00D4FF);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ========== Navigation ========== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 10, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--text);
+  opacity: 1;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ========== Hero (Home page) ========== */
+.hero {
+  text-align: center;
+  padding: 100px 24px 60px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(108, 60, 225, 0.25) 0%, transparent 60%),
+    var(--bg-dark);
+}
+
+.hero-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto 36px;
+}
+
+.btn-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gradient);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-store:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108, 60, 225, 0.4);
+  opacity: 1;
+}
+
+/* ========== Features Section ========== */
+.features {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.feature-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ========== Legal Pages ========== */
+.legal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.legal h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.legal .effective-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 36px;
+}
+
+.legal h2 {
+  font-size: 1.3rem;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal h3 {
+  font-size: 1.1rem;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.legal p,
+.legal li {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.legal ul, .legal ol {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.legal li {
+  margin-bottom: 6px;
+}
+
+.legal a {
+  color: var(--accent);
+}
+
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.legal th, .legal td {
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.legal th {
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+.legal td {
+  color: var(--text-muted);
+}
+
+/* ========== Footer ========== */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(15, 10, 42, 0.98);
+    padding: 16px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .legal h1 {
+    font-size: 1.6rem;
+  }
+
+  .legal table {
+    font-size: 0.8rem;
+  }
+
+  .legal th, .legal td {
+    padding: 8px 10px;
+  }
+}
